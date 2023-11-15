@@ -79,6 +79,15 @@ public class ArrayUtils {
         return false;
     }
 
+    public static boolean allMatch(int[] arr, IntPredicate predicate) {
+        for (var i : arr) {
+            if (!predicate.apply(i)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
     public static <T> int count(T[] arr, Predicate<T> predicate) {
         int ctr = 0;
         for (var i : arr) {
